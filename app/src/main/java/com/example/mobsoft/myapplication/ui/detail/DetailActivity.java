@@ -46,4 +46,10 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
 
     }
 
+    public void navigateBack() {
+
+
+    }
+
+
 }

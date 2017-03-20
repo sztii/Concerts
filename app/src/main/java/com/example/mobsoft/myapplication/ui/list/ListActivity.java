@@ -44,4 +44,24 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
 
     }
 
+    @Override
+    public void newConcert() {
+
+    }
+
+    @Override
+    public void favourite() {
+
+    }
+
+    @Override
+    public void deleteFavourite() {
+
+    }
+
+    @Override
+    public void selectConcert() {
+
+    }
+
 }

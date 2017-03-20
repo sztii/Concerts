@@ -8,4 +8,10 @@ public interface ListScreen {
     void showList();
 
     void newConcert();
+
+    void favourite();
+
+    void deleteFavourite();
+
+    void selectConcert();
 }

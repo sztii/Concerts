@@ -6,4 +6,6 @@ package com.example.mobsoft.myapplication.ui.detail;
 
 public interface DetailScreen {
     void showDetails(int id);
+
+    void navigateBack();
 }
