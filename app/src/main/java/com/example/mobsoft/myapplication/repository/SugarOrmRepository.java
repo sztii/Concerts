@@ -29,6 +29,11 @@ public class SugarOrmRepository implements Repository {
     }
 
     @Override
+    public Concert getConcert(Long id) {
+        return SugarRecord.findById(Concert.class, id) ;
+    }
+
+    @Override
     public void saveConcert(Concert concert) {
         SugarRecord.saveInTx(concert);
     }

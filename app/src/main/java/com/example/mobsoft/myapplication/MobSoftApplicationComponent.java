@@ -28,5 +28,5 @@ public interface MobSoftApplicationComponent {
 
     void inject(NewconcertActivity newconcertActivity);
 
-    void inject(ConcertsInteractor concertssInteractor);
+    void inject(ConcertsInteractor concertsInteractor);
 }

@@ -1,0 +1,89 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Concerts
+schemes:
+  - http
+paths:
+  /concert:
+    get:
+      tags:
+        - Concerts
+      summary: Get the concerts
+      description: Returns all the concerts
+      produces:
+        - application/xml
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Concert'
+        default:
+          description: error
+    post:
+      tags:
+        - Concerts
+      summary: Add a new concert
+      description: ''
+      consumes:
+        - application/json
+        - application/xml
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Concert'
+      responses:
+        '405':
+          description: Invalid input
+  '/concert/{id}':
+    get:
+      tags:
+        - Concerts
+      summary: Find concert by ID
+      description: Returns a single concert
+      produces:
+        - application/xml
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ID of concert to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Concert'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Concert not found
+definitions:
+  Concert:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: Kygo
+      date:
+        type: string
+      place:
+        type: string
+      price:
+        type: integer
+        format: int64
+      website:
+        type: string

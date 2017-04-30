@@ -37,6 +37,14 @@ public class MemoryRepository implements Repository  {
     }
 
     @Override
+    public Concert getConcert(Long id) {
+        for (Concert concert : concerts) {
+            if (concert.getId().equals(id)) return concert;
+        }
+        return null;
+    }
+
+    @Override
     public void saveConcert(Concert concert) {
         concerts.add(concert);
     }
