@@ -22,7 +22,7 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
 
         MobSoftApplication.injector.inject(this);
     }
@@ -63,5 +63,10 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
     public void selectConcert() {
 
     }
+
+    public void showMessage(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
 
 }

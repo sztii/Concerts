@@ -14,6 +14,7 @@ import com.example.mobsoft.myapplication.repository.RepositoryModule;
 import com.example.mobsoft.myapplication.ui.UIModule;
 import com.example.mobsoft.myapplication.ui.list.ListActivity;
 import com.example.mobsoft.myapplication.ui.detail.DetailActivity;
+import com.example.mobsoft.myapplication.ui.list.ListPresenter;
 import com.example.mobsoft.myapplication.ui.main.MainActivity;
 import com.example.mobsoft.myapplication.ui.newconcert.NewconcertActivity;
 
@@ -29,4 +30,6 @@ public interface MobSoftApplicationComponent {
     void inject(NewconcertActivity newconcertActivity);
 
     void inject(ConcertsInteractor concertsInteractor);
+
+    void inject(ListPresenter listPresenter);
 }

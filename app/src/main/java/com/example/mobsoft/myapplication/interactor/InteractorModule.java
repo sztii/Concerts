@@ -14,7 +14,7 @@ import dagger.Provides;
 public class InteractorModule {
 
     @Provides
-    public ConcertsInteractor provideFavourites() {
+    public ConcertsInteractor provideConcerts() {
         return new ConcertsInteractor();
     }
 

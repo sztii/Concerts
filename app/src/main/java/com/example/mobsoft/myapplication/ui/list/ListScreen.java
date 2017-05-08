@@ -14,4 +14,6 @@ public interface ListScreen {
     void deleteFavourite();
 
     void selectConcert();
+
+    void showMessage(String text);
 }
