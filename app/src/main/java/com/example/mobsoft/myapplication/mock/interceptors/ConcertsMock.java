@@ -31,12 +31,12 @@ public class ConcertsMock {
             /**
              * Simple Get Example
              */
-			/*
-		}else if (uri.getPath().equals(NetworkConfig.ENDPOINT_PREFIX + "Todos") && request.method().equals("Get")) {
+
+		}else if (uri.getPath().equals(NetworkConfig.ENDPOINT_PREFIX + "concert") && request.method().equals("Get")) {
 			MemoryRepository memoryRepository = new MemoryRepository();
 			memoryRepository.open(null);
-			responseString = GsonHelper.getGson().toJson(memoryRepository.getFavourites());
-			responseCode = 200;*/
+			responseString = GsonHelper.getGson().toJson(memoryRepository.getConcerts());
+			responseCode = 200;
         } else {
             responseString = "ERROR";
             responseCode = 503;

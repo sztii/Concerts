@@ -1,13 +1,20 @@
 package com.example.mobsoft.myapplication.ui.list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mobsoft.myapplication.MobSoftApplication;
 import com.example.mobsoft.myapplication.R;
+import com.example.mobsoft.myapplication.model.Concert;
 import com.example.mobsoft.myapplication.ui.main.MainPresenter;
 import com.example.mobsoft.myapplication.ui.list.ListScreen;
+import com.example.mobsoft.myapplication.ui.newconcert.NewconcertActivity;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -19,12 +26,25 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
     @Inject
     ListPresenter listPresenter;
 
+    Button btnNewConcert;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
         MobSoftApplication.injector.inject(this);
+
+        btnNewConcert = (Button)findViewById(R.id.btnNewConcert);
+
+        btnNewConcert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), NewconcertActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -40,7 +60,7 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
     }
 
     @Override
-    public void showList() {
+    public void showList(List<Concert> concerts) {
 
     }
 
@@ -60,7 +80,7 @@ public class ListActivity  extends AppCompatActivity implements ListScreen {
     }
 
     @Override
-    public void selectConcert() {
+    public void selectConcert(int id) {
 
     }
 

@@ -1,11 +1,15 @@
 package com.example.mobsoft.myapplication.ui.list;
 
+import com.example.mobsoft.myapplication.model.Concert;
+
+import java.util.List;
+
 /**
  * Created by mobsoft on 2017. 03. 20..
  */
 
 public interface ListScreen {
-    void showList();
+    void showList(List<Concert> concerts);
 
     void newConcert();
 
@@ -13,7 +17,7 @@ public interface ListScreen {
 
     void deleteFavourite();
 
-    void selectConcert();
+    void selectConcert(int id);
 
     void showMessage(String text);
 }
