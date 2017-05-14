@@ -26,7 +26,7 @@ public class GetConcertEvent {
         this.code = code;
     }
 
-    public Concert getConcert(Long id) {
+    public Concert getConcert() {
         return concert;
     }
 

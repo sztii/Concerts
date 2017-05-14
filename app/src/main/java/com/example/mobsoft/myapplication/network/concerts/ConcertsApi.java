@@ -28,7 +28,7 @@ public interface ConcertsApi {
 
   
   /**
-   * Add a new concert
+   * Add a new_concert concert
    * 
    * @param body 
    * @return Call<Void>

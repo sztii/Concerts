@@ -5,12 +5,15 @@ import com.example.mobsoft.myapplication.interactor.concert.events.GetConcertEve
 import com.example.mobsoft.myapplication.interactor.concert.events.GetConcertsEvent;
 import com.example.mobsoft.myapplication.interactor.concert.events.SaveConcertEvent;
 import com.example.mobsoft.myapplication.model.Concert;
+import com.example.mobsoft.myapplication.network.concerts.ConcertsApi;
 import com.example.mobsoft.myapplication.repository.Repository;
-import de.greenrobot.event.EventBus;
+
 import java.util.List;
 
 import javax.inject.Inject;
 
+import de.greenrobot.event.EventBus;
+import retrofit2.Call;
 
 
 /**
@@ -18,6 +21,8 @@ import javax.inject.Inject;
  */
 
 public class ConcertsInteractor {
+    @Inject
+    ConcertsApi concertsApi;
     @Inject
     Repository repository;
     @Inject
@@ -44,6 +49,7 @@ public class ConcertsInteractor {
         SaveConcertEvent event = new SaveConcertEvent();
         event.setConcert(concert);
         try {
+            concertsApi.concertPost(concert).execute();
             repository.saveConcert(concert);
             bus.post(event);
         } catch (Exception e) {

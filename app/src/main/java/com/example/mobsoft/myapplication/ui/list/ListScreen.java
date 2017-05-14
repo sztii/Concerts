@@ -9,15 +9,9 @@ import java.util.List;
  */
 
 public interface ListScreen {
-    void showList(List<Concert> concerts);
+    void showList();
 
-    void newConcert();
-
-    void favourite();
-
-    void deleteFavourite();
-
-    void selectConcert(int id);
+    void showDetail(Concert concert);
 
     void showMessage(String text);
 }

@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_detail"
-    tools:context="com.example.mobsoft.myapplication.ui.newconcert.NewconcertActivity">
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.mobsoft.myapplication.ui.detail.DetailActivity">
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/placeholder"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/place_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Place"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/date_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/price_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"/>
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

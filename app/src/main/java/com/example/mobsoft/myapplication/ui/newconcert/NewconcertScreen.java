@@ -5,7 +5,7 @@ package com.example.mobsoft.myapplication.ui.newconcert;
  */
 
 public interface NewconcertScreen {
-    void saveNewconcert();
+    void showListScreen();
 
-    void showNewconcertScreen();
+    void showMessage(String text);
 }

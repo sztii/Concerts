@@ -7,7 +7,6 @@ package com.example.mobsoft.myapplication.ui;
 import dagger.Module;
 import dagger.Provides;
 import com.example.mobsoft.myapplication.ui.list.ListPresenter;
-import com.example.mobsoft.myapplication.ui.main.MainPresenter;
 import com.example.mobsoft.myapplication.ui.detail.DetailPresenter;
 import com.example.mobsoft.myapplication.ui.newconcert.NewconcertPresenter;
 
@@ -30,12 +29,6 @@ public class UIModule {
     @Provides
     public Context provideContext() {
         return context;
-    }
-
-    @Provides
-    @Singleton
-    public MainPresenter provideMainPresenter() {
-        return new MainPresenter();
     }
 
     @Provides
