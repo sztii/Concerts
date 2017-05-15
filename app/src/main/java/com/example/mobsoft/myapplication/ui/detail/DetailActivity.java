@@ -3,9 +3,11 @@ package com.example.mobsoft.myapplication.ui.detail;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,8 +17,12 @@ import com.example.mobsoft.myapplication.model.Concert;
 import com.example.mobsoft.myapplication.ui.detail.DetailPresenter;
 import com.example.mobsoft.myapplication.ui.detail.DetailScreen;
 import com.example.mobsoft.myapplication.ui.newconcert.NewconcertActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import javax.inject.Inject;
+
+import static android.R.attr.name;
 
 /**
  * Created by mobsoft on 2017. 03. 20..
@@ -33,6 +39,8 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
     private TextView priceTv;
     private TextView websiteTv;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +52,9 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
         placeTv = (TextView)findViewById(R.id.place_tv);
         priceTv = (TextView)findViewById(R.id.price_tv);
         websiteTv = (TextView)findViewById(R.id.website_tv);
+
+        MobSoftApplication application = (MobSoftApplication) getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
@@ -56,6 +67,10 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
         if (concertId != null) {
             detailPresenter.updateConcert(concertId);
         }
+
+
+        mTracker.setScreenName("Image~DetailActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
@@ -95,6 +110,11 @@ public class DetailActivity extends AppCompatActivity implements DetailScreen {
             websiteTv.setText(concert.getWebsite() == null ? "" : concert.getWebsite());
         }
     }
+
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
 
     public void showMessage(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();

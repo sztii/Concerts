@@ -3,6 +3,7 @@
     package="com.example.mobsoft.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -26,6 +27,9 @@
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="0c31906ef364efa6b4f17d84f755852b30818eb5" />
     </application>
 
 </manifest>
